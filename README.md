@@ -32,6 +32,19 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Adonis](https://adonisjs.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 
+## Configurar backend
+
+É necessario ter um banco de dados MySQL rodando na sua maquina
+
+  - Vá ate a pasta server
+  - Troque o nome do arquivo .env.example para .env
+  - Execute **adonis key:generate**
+  - Configure **ADMIN_EMAIL** e **ADMIN_PASSWORD**
+  - Configure seu banco de dados no .env
+  - Execute **adonis migration:run**
+  - Execute **adonis seed** para criar o seu usuario de administrador com as credenciais adicionadas no .env
+  - Para executar o servidor rode **adonis serve --dev**
+
 ## 💻 Projeto
 
 O Happy é uma aplicação que conecta pessoas à casas de acolhimento institucional para fazer o dia de muitas crianças mais feliz 💜

@@ -15,12 +15,10 @@ class OrphanageController {
    * Show a list of all orphanages.
    * GET orphanages
    *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
    */
-  async index({ request, response, view }) {}
+  async index() {
+    return await Orphanage.query().where('admin_accepted', true).fetch();
+  }
 
   /**
    * Create/save a new orphanage.
@@ -63,7 +61,7 @@ class OrphanageController {
 
     await newOrphanage.save();
 
-    return response.ok();
+    return await Orphanage.all();
   }
 
   /**
@@ -75,7 +73,14 @@ class OrphanageController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async show({ params, request, response, view }) {}
+  async show({ params, request, response, view }) {
+    const query = await Orphanage.query().where('id', params.id).fetch();
+    const data = query.toJSON();
+
+    Object.keys(data).length > 0
+      ? response.status(200).send(data)
+      : response.notFound();
+  }
 
   /**
    * Update orphanage details.

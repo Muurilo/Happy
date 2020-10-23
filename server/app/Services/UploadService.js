@@ -1,3 +1,5 @@
+'use strict';
+
 const Helpers = use('Helpers');
 
 module.exports = {
