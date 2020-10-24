@@ -16,10 +16,14 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route');
 
+// Login
 Route.post('login', 'UserController.login');
 
-Route.get('/orphanages', 'OrphanageController.index');
+// Password Recover
+Route.post('recover', 'UserController.requestPasswordRecover')
+Route.post('confirm_recover', 'UserController.recoverPassword')
 
-Route.get('/orphanages/:id', 'OrphanageController.show');
-
-Route.post('/orphanages', 'OrphanageController.store');
+// Orphanages Routes
+Route.get('orphanages', 'OrphanageController.index');
+Route.get('orphanages/:id', 'OrphanageController.show');
+Route.post('orphanages', 'OrphanageController.store');
