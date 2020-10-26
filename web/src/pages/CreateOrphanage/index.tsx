@@ -1,24 +1,25 @@
-import React from "react";
-import { useState } from "react";
-import { Marker } from "react-leaflet";
+import React from 'react';
+import { useState } from 'react';
+import { Marker } from 'react-leaflet';
 
-import PrimaryButton from "../../components/PrimaryButton";
-import Sidebar from "../../components/Sidebar";
+import PrimaryButton from '../../components/PrimaryButton';
+import Sidebar from '../../components/Sidebar';
 
-import "./styles.css";
-import { FiPlus } from "react-icons/fi";
-import Map from "../../components/Map";
-import happyMapIcon from "../../components/Map/happMapIcon";
-import newOrphanageIcon from "../../components/Map/newOrphanageIcon";
-import { getTsBuildInfoEmitOutputFilePath } from "typescript";
+import './styles.css';
+import { FiPlus, FiX } from 'react-icons/fi';
+import Map from '../../components/Map';
+import happyMapIcon from '../../components/Map/happMapIcon';
+import newOrphanageIcon from '../../components/Map/newOrphanageIcon';
 
 export default function OrphanagesMap() {
   const [isOpenWeeksEnds, setOpenWeekends] = useState(false);
-  const [files, setFiles] = useState([]);
+  const [files, setFiles] = useState(Array);
   const [orphanageLocation, setOrphanageLocation] = useState(Array);
 
   function handleChange(e: any) {
-    console.log(...files);
+    const url = URL.createObjectURL(e.target.files[0]);
+
+    setFiles([...files, url]);
   }
 
   function openWeekends() {
@@ -49,12 +50,12 @@ export default function OrphanagesMap() {
                   selectLocation(e.latlng);
                 }}
                 style={{
-                  width: "100%",
+                  width: '100%',
                   height: 280,
-                  borderRadius: "20px",
-                  borderBottomLeftRadius: "0px",
-                  borderBottomRightRadius: "0px",
-                  cursor: "pointer",
+                  borderRadius: '20px',
+                  borderBottomLeftRadius: '0px',
+                  borderBottomRightRadius: '0px',
+                  cursor: 'pointer',
                 }}
               >
                 <Marker
@@ -99,11 +100,34 @@ export default function OrphanagesMap() {
               <label htmlFor="images">Fotos</label>
               {files.length < 1 ? (
                 <>
-                  <button className="new-image">
-                    <FiPlus size={24} color="#15b6d6" />
-                  </button>
+                  <div className="new-image">
+                    <label htmlFor="file-upload" className="custom-file-upload">
+                      <FiPlus size={24} color="#15b6d6" />
+                    </label>
+                    <input
+                      id="file-upload"
+                      onChange={handleChange}
+                      type="file"
+                    />
+                  </div>
                 </>
-              ) : null}
+              ) : (
+                <div className="image-preview-content">
+                  {files.map((file: any, index: number) => {
+                    return (
+                      <div className="image-preview">
+                        <img src={`${file}`} alt="Preview" key={index} />
+                        <div className="remove-image">
+                          <FiX size={24} color="#FF669D" />
+                        </div>
+                      </div>
+                    );
+                  })}
+                  <div className="add-new-image">
+                    <FiPlus size={44} color="#15b6d6" />
+                  </div>
+                </div>
+              )}
             </div>
           </fieldset>
 
@@ -127,14 +151,14 @@ export default function OrphanagesMap() {
                 <button
                   type="button"
                   onClick={openWeekends}
-                  className={isOpenWeeksEnds === true ? "active" : undefined}
+                  className={isOpenWeeksEnds === true ? 'active' : undefined}
                 >
                   Sim
                 </button>
                 <button
                   type="button"
                   onClick={closeWeekends}
-                  className={isOpenWeeksEnds === false ? "active" : undefined}
+                  className={isOpenWeeksEnds === false ? 'active' : undefined}
                 >
                   Não
                 </button>

@@ -7,7 +7,7 @@
   box-sizing: border-box;
   border-radius: 20px;
   text-align: center;
-  background: #F5F8FA;
+  background: #f5f8fa;
   margin-bottom: 50px;
 }
 
@@ -99,9 +99,6 @@ form.create-orphanage-form fieldset legend {
   padding-bottom: 24px;
 }
 
-form.create-orphanage-form .input-block {
-}
-
 form.create-orphanage-form .input-block + .input-block {
   margin-top: 24px;
 }
@@ -141,6 +138,81 @@ form.create-orphanage-form .input-block textarea {
   resize: vertical;
   padding: 16px;
   line-height: 28px;
+}
+
+input[type='file'] {
+  display: none;
+}
+
+.custom-file-upload {
+  margin-top: 2.5%;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.image-preview-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.image-preview-content .image-preview {
+  position: relative;
+}
+
+.image-preview-content .image-preview img {
+  width: 126px;
+  height: 126px;
+  border-radius: 20px;
+  border: 1px solid #d3e2e5;
+  box-sizing: border-box;
+  border-radius: 20px;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.image-preview-content .remove-image {
+  position: absolute;
+  border-radius: 20px;
+  width: 48px;
+  height: 48px;
+  color: white;
+  background-color: white;
+  top: 0;
+  right: 0;
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: 16px;
+  z-index: 5;
+
+  cursor: pointer;
+
+  border: 1px solid #d3e2e5;
+  box-sizing: border-box;
+  border-radius: 0px 20px;
+
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.image-preview-content .add-new-image {
+  display: flex;
+  width: 126px;
+  height: 126px;
+
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  background: #f5f8fa;
+  border: 1px dashed #96d2f0;
+  border-radius: 20px;
+
+  cursor: pointer;
+  margin-left: 15px;
+  margin-top: 15px;
 }
 
 form.create-orphanage-form .input-block .new-image {
