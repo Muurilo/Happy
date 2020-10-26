@@ -8713,6 +8713,11 @@ react-dom@^16.13.1:
     prop-types "^15.6.2"
     scheduler "^0.19.1"
 
+react-element-spinner@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/react-element-spinner/-/react-element-spinner-1.0.4.tgz#10944f974ea753b2f8f22154062c05aec7bf0909"
+  integrity sha512-JAdY2lMVJv+j9mcC4Cm/w8EXdy6NYAPI9ju/EcfIbp/rP2YcP3ZMjipfUfravOYHuQbEIvXKKkfDKf8qLIdAFQ==
+
 react-error-overlay@^6.0.7:
   version "6.0.7"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.7.tgz#1dcfb459ab671d53f660a991513cb2f0a0553108"

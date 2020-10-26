@@ -17,7 +17,7 @@ class OrphanageController {
    *
    */
   async index() {
-    return await Orphanage.query().where('admin_accepted', true).fetch();
+    return await Orphanage.query().where('admin_accepted', false).fetch();
   }
 
   /**
