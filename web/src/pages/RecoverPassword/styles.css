@@ -1,0 +1,134 @@
+#page-recover {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+
+  position: relative;
+  display: flex;
+}
+
+#page-recover aside {
+  width: 60vw;
+  background: linear-gradient(329.54deg, #15b6d6 0%, #15d6d6 100%);
+  padding: 80px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#page-recover aside header img {
+  width: 260px;
+  height: 240px;
+}
+
+#page-recover aside h1 {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 42px;
+  margin-top: 64px;
+}
+
+#page-recover aside p {
+  line-height: 28px;
+  margin-top: 24px;
+}
+
+#page-recover aside footer {
+  margin-top: 80px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  line-height: 24px;
+
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 34px;
+}
+
+#page-recover aside footer strong {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 34px;
+}
+
+#page-recover .login-content header button {
+  width: 48px;
+  height: 48px;
+
+  border: 0;
+
+  background: #ebf2f5;
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 50px;
+
+  position: absolute;
+
+  right: 0;
+  top: 0;
+}
+
+#page-recover .login-content main {
+  color: #5c8599;
+  width: 100%;
+  margin-top: 25vh;
+  margin-left: 4vw;
+}
+
+#page-recover .login-content main h1 {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 52px;
+  line-height: 34px;
+  color: #5c8599;
+}
+
+#page-recover .login-content main p {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+
+  margin-top: 20px;
+
+  color: #5c8599;
+}
+
+#page-recover .login-content main .form-container {
+  display: block;
+  margin-top: 25px;
+}
+
+#page-recover .login-content main .form-container button {
+  width: 100%;
+}
+
+#page-recover .login-content main .form-container input {
+  width: 100%;
+  height: 64px;
+  padding: 12px 15px;
+  display: block;
+  outline: none;
+
+  background: #f5f8fa;
+  /* Back / Lines in white */
+
+  border: 1px solid #d3e2e5;
+  box-sizing: border-box;
+  border-radius: 20px;
+}

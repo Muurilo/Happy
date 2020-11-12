@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Api from '../../services/api';
 import { useParams } from 'react-router-dom';
+import { SpinnerComponent } from 'react-element-spinner';
 import { FaWhatsapp } from 'react-icons/fa';
 import { FiClock, FiInfo } from 'react-icons/fi';
 import { Marker } from 'react-leaflet';
@@ -168,7 +169,9 @@ export default function Orphanage() {
               </PrimaryButton>
             </div>
           </div>
-        ) : null}
+        ) : (
+          <SpinnerComponent loading={true} position="centered" />
+        )}
       </main>
     </div>
   );

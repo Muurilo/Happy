@@ -1,13 +1,14 @@
 button.primary-button {
   margin-top: 64px;
+  outline: none;
 
   width: 100%;
   height: 64px;
   border: 0;
   cursor: pointer;
-  background: #3CDC8C;
+  background: #3cdc8c;
   border-radius: 20px;
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 800;
 
   display: flex;
@@ -22,5 +23,5 @@ button.primary-button svg {
 }
 
 button.primary-button:hover {
-  background: #36CF82;
+  background: #36cf82;
 }
